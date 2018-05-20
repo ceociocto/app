@@ -1,0 +1,14 @@
+{
+  "name": "haopingApp",
+  "app_id": "",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  },
+  "proxies": [
+    {
+      "path": "/api", 
+      "proxyUrl": "https://study2.lijian.ink/api"
+    }
+  ]
+}

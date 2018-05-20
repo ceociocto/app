@@ -1,0 +1,29 @@
+<!--
+  Generated template for the FeedbackCategoryPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>feedbackCategory</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <div class="container flex-col">
+    <div class="title-container">
+      哪方面最重要？
+    </div>
+    <div class="category-container">
+      <div class="category-wraper" *ngFor="let category of categoryList" (click)="updateFeedback(category)">
+        <div class="category-item">
+          {{category.name}}
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>
