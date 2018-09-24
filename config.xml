@@ -5,8 +5,8 @@
     <author email="ceociocto@qq.com" href="http://ionicframework.com/">Jerry</author>
     <content src="index.html" />
     <access origin="*" />
-    <allow-intent href="http://*/*" />
-    <allow-intent href="https://*/*" />
+    <allow-intent href="http://*/*" launch-external="yes" />
+    <allow-intent href="https://*/*" launch-external="yes" />
     <allow-intent href="tel:*" />
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
@@ -93,7 +93,8 @@
         <auto-download enabled="false" />
         <auto-install enabled="false" />
     </chcp>
-    <plugin name="cordova-plugin-app-update" spec="^1.6.0" />
-    <engine name="android" spec="^6.4.0" />
+    <plugin name="cordova-plugin-inappbrowser" spec="^3.0.0" />
+    <allow-navigation href="http://192.168.1.103:8100" />
     <engine name="ios" spec="~4.5.4" />
+    <engine name="android" spec="7.0.0" />
 </widget>

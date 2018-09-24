@@ -28,7 +28,7 @@ export class FeedbackProvider {
       
   }
   create(obj) {
-    return this.http.post('https://study2.lijian.ink/api/posts', obj, this.httpOptions)
+    return this.http.post(AppConfig.getPrudUrl() + '/api/posts', obj, this.httpOptions)
       .map(res => {
         return res
       })

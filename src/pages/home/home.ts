@@ -1,3 +1,4 @@
+import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { FeedbackPage } from './../feedback/feedback';
 import { LoginProvider } from './../../providers/login/login';
 import { Component } from '@angular/core';
@@ -13,7 +14,8 @@ export class HomePage {
     username: '',
     password:''
   }
-  constructor(public navCtrl: NavController, private toastCtrl: ToastController, private storage: Storage, private login: LoginProvider) {
+  constructor(public navCtrl: NavController, private toastCtrl: ToastController, private storage: Storage, private login: LoginProvider,
+    private iab: InAppBrowser) {
 
   }
   ionViewDidLoad() {
@@ -40,6 +42,10 @@ export class HomePage {
     })
   }
   downloadApp() {
-    window.open("https://study2.lijian.ink/hp.apk", '_system');
+    this.iab.create("https://study2.lijian.ink/hp.apk")
+    // window.open("https://study2.lijian.ink/hp.apk", '_system', 'location=yes');
+  }
+  downloadAndroid() {
+    // navigator.app.loadUrl("https://study2.lijian.ink/hp.apk", {openExternal : true})
   }
 }

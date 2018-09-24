@@ -51,50 +51,33 @@ export class FeedbackCategoryPage {
   // ]
   constructor(public navCtrl: NavController, public navParams: NavParams,
     private feedback: FeedbackProvider, private storage: Storage) {
-    
+
   }
 
   ionViewDidLoad() {
-    let array1 = []
-    let array2 = []
-    // this.storage.get('categoryList').then(res => {
-    //   array1 = res.data
-    //   this.storage.get('categoryListAll').then(res => {
-    //     console.log(res.data);
-        
-    //     array2 = res.data
-    //     for (let i = 0; i < array2.length; i++) {
-    //       for (let j = 0; j < array1.length; j++) {
-    //         if (array1[j].categoryId == array2[i].id ) {
-              
-    //           array1[j].name = array2[i].name
-    //         }
-    //       }
-    //     }
-    //     console.log(array1);
-        
-    //     this.categoryList = array1
-    //   })
-    // })
     this.storage.get('categoryList').then(res => {
       this.categoryList = res
     })
-    setTimeout(res=> {
+    setTimeout(res => {
       this.navCtrl.push(FeedbackPage);
     }, 8000)
   }
-  updateFeedback (category) {
+  updateFeedback(category) {
     this.storage.get('id').then(res => {
       console.log(res)
-      let tmpObj = {
-        id: res,
-        categoryName: category
-      }
+      let tmpId = res
+      let tmpObj: any
+      this.storage.get('feedback').then(res => {
+        tmpObj = res
+        tmpObj.id = tmpId
+        tmpObj.categoryName = category
 
-    this.feedback.update(tmpObj).subscribe(res => {
-      console.log(res)
-      this.navCtrl.push(FeedbackEndPage);
-    })
+        this.feedback.update(tmpObj).subscribe(res => {
+          console.log(res)
+          this.navCtrl.push(FeedbackEndPage);
+        })
+      })
+
     })
   }
 }

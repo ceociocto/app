@@ -18,8 +18,7 @@ import { HttpClientModule } from "@angular/common/http";
 import { FeedbackProvider } from '../providers/feedback/feedback';
 import { HTTP } from "@ionic-native/http";
 
-import { AppUpdate } from '@ionic-native/app-update';
-
+import { InAppBrowser } from '@ionic-native/in-app-browser';
 
 @NgModule({
   declarations: [
@@ -53,7 +52,7 @@ import { AppUpdate } from '@ionic-native/app-update';
     FeedbackProvider,
     CategoryProvider,
     HTTP,
-    AppUpdate
+    InAppBrowser
   ]
 })
 export class AppModule {}
