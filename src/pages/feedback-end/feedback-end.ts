@@ -23,7 +23,7 @@ export class FeedbackEndPage {
     console.log('ionViewDidLoad FeedbackEndPage');
     setTimeout(res=> {
       this.navCtrl.push(FeedbackPage);
-    }, 4000)
+    }, 6000)
   }
 
 }

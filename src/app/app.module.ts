@@ -1,3 +1,4 @@
+import { CategoryProvider } from './../providers/category';
 import { FeedbackEndPage } from './../pages/feedback-end/feedback-end';
 import { FeedbackCategoryPage } from './../pages/feedback-category/feedback-category';
 import { FeedbackPage } from './../pages/feedback/feedback';
@@ -16,6 +17,9 @@ import { IonicStorageModule } from '@ionic/storage';
 import { HttpClientModule } from "@angular/common/http";
 import { FeedbackProvider } from '../providers/feedback/feedback';
 import { HTTP } from "@ionic-native/http";
+
+import { AppUpdate } from '@ionic-native/app-update';
+
 
 @NgModule({
   declarations: [
@@ -47,7 +51,9 @@ import { HTTP } from "@ionic-native/http";
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     LoginProvider,
     FeedbackProvider,
-    HTTP
+    CategoryProvider,
+    HTTP,
+    AppUpdate
   ]
 })
 export class AppModule {}

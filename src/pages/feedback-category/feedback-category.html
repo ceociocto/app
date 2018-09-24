@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>feedbackCategory</ion-title>
+    <ion-title>今日好评</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -19,9 +19,9 @@
       哪方面最重要？
     </div>
     <div class="category-container">
-      <div class="category-wraper" *ngFor="let category of categoryList" (click)="updateFeedback(category)">
+      <div class="category-wraper" *ngFor="let category of categoryList" (click)="updateFeedback(category.categoryName)">
         <div class="category-item">
-          {{category.name}}
+          {{category.categoryName}}
         </div>
       </div>
     </div>

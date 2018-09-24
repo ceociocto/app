@@ -16,7 +16,8 @@ export class HomePage {
   constructor(public navCtrl: NavController, private toastCtrl: ToastController, private storage: Storage, private login: LoginProvider) {
 
   }
-  ngOnInit() {
+  ionViewDidLoad() {
+    this.storage.remove('user')
     this.storage.remove('token')
   }
   onLogin(user) {
@@ -33,8 +34,12 @@ export class HomePage {
       if(res.token) {
       this.storage.set('token', res.token)
       this.storage.set('user', res.user)
+      this.storage.set('shopId', res.user.shopId)
       this.navCtrl.push(FeedbackPage)
       }
     })
+  }
+  downloadApp() {
+    window.open("https://study2.lijian.ink/hp.apk", '_system');
   }
 }
